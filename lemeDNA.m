@@ -25,7 +25,7 @@
 %   AFM_lemeDNA.xlsx    - excel file with pixel lengths
 
 
-clear all
+clc; clear all
 % removes all variables from system memory
 warning ('off', 'images:initSize:adjustingMag');  
 % turn off the warnigs about image resolution
