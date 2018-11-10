@@ -8,7 +8,7 @@ function [odd, even] = Fchaincode(BIl,s)
 
 %   Author.....: KPB
 
-%   Date..........: 2015, May
+%   Date..........: 2018, November
 %   
 %
 %   INPUT:
@@ -37,21 +37,22 @@ for i=1:1:s
     [row col] = find(BIl==i);
     o = [row col];                            %object coordinates
  
-      for oi=1:1:length(o)
-  
-        if BIl(o(oi,1)+1, o(oi, 2))==i   %direction 1
+             
+      for oi=1:length(o)
+   
+        if BIl(o(oi,1)-1, o(oi, 2)+1)==i   %direction 1
          odd(i)=odd(i)+1;
         end
   
-        if BIl(o(oi,1)-1, o(oi,2)+1)==i  %direction 3
+        if BIl(o(oi,1)-1, o(oi,2)-1)==i  %direction 3
         odd(i)=odd(i)+1;
         end
   
-        if BIl(o(oi,1), o(oi, 2)+1)==i   %direction 2
+        if BIl(o(oi,1)-1, o(oi, 2))==i   %direction 2
         even(i)=even(i)+1;
         end
   
-        if BIl(o(oi,1)-1, o(oi,2))==i    %direction 4
+        if BIl(o(oi,1), o(oi,2)-1)==i    %direction 4
         even(i)=even(i)+1;
         end
   

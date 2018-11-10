@@ -7,7 +7,7 @@
 %                brabcova@ujf.cas.cz
 %
 %   Created.......: 2015, February
-%   Last update...: 2018, February
+%   Last update...: 2018, November
 
 
 %   INPUT:   
@@ -34,9 +34,12 @@ warning ('off', 'images:initSize:adjustingMag');
 %1. INPUT
 %*************************
 
+
 % 1.1 RGB Image
 name = 'trial.png';
 [Iorig] = imread(name); 
+
+% imshow(Iorig)
 
 fprintf('This is testing version. \n');
 
@@ -80,7 +83,46 @@ BIl = bwlabel(BIthin_pruning, 8);      % indexes selected objects with integrer
 s = max(BIl(:));                       % number of selected objects on the subimage
 fprintf('Selected objects on the subimage: %d\n', s)
 
+imshow(BIthin_pruning)
+hold on
+
 [odd, even] = Fchaincode(BIl, s);
 
-% 3.2 Pixel length
+% odd = zeros(s,1);
+% even = zeros(s,1);
+% 
+% for i=1:1:s
+%     [row col] = find(BIl==i);
+%     o = [row col];                            %object coordinates
+%  
+%              
+%       for oi=1:length(o)
+%   
+%  plot((o(oi,2)), (o(oi,1)), 'g.')
+%  hold on
+%  
+%         if BIl(o(oi,1)-1, o(oi, 2)+1)==i   %direction 1
+%          odd(i)=odd(i)+1;
+%          plot(o(oi,2)+1, o(oi,1)-1, 'r.')
+%         end
+%   
+%         if BIl(o(oi,1)-1, o(oi,2)-1)==i  %direction 3
+%         odd(i)=odd(i)+1;
+%         plot(o(oi,2)-1, o(oi,1)-1, 'b.')
+%         end
+%   
+%         if BIl(o(oi,1)-1, o(oi, 2))==i   %direction 2
+%         even(i)=even(i)+1;
+%         plot(o(oi,2), o(oi,1)-1, 'rp')
+%         end
+%   
+%         if BIl(o(oi,1), o(oi,2)-1)==i    %direction 4
+%         even(i)=even(i)+1;
+%         plot(o(oi,2)-1, o(oi,1), 'bp')
+%         end
+%   
+%     end
+%     end
+
+% % 3.2 Pixel length
 [PL] = PixelLength(odd, even, s, BIthin_pruning, BIl, name, ds, sel, Iorig, d);

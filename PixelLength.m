@@ -37,10 +37,11 @@ R = d/width;
 % Correction factor c dependent on image resolution R
 % set for persistence length of 50 nm
 % according to C. Rivetti, Cytometry 75A, 854 (2009)
-c = 0.9479+0.00433*R;
+% c = 0.9479+0.00433*R;
+c = 1;
 
 % Freeman estimator with the correction factor
-PL = round(c*(sqrt(odd)+even), 1);  
+PL = round(c*(sqrt(2)*odd+even), 1);  
     
 
 %  Display number of each molecule and its pixel length

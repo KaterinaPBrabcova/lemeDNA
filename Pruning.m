@@ -24,7 +24,7 @@ function [BIthin_pruning] = Pruning(BIthin)
 %                     and pruning 
 
 visual =0;
-pruning_index = 50;   %default 
+pruning_index = 20;   %default 
 
 % Adding 1-pixel-width-edge of zeros to the analysed image
 % to solve the problem of analyzing molecules with edge pixels
