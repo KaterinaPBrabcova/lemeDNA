@@ -3,7 +3,8 @@ Computation of worm-like objects length
 
 July 2018
 
-Supported by ESA project 4000111283-WP2014-NPI359-2013 
+Supported by ESA project 4000111283-WP2014-NPI359-2013 and Czech Science Foundation, project no. 17-03403Y
+
 Developer Katerina Pachnerova Brabcova
 
 brabcova@ujf.cas.cz
